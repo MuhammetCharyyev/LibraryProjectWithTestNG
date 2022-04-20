@@ -17,19 +17,19 @@ WHERE is_returned = 0;
 
 -- us 03 -- query to find most popular book genre
 
-SELECT bc.name, COUNT(*) AS countofbookcategories
-FROM book_borrow bb
-         INNER JOIN books b
-             ON bb.book_id = b.id
-         INNER JOIN book_categories bc
-             ON b.book_category_id = bc.id
-GROUP BY bc.name
-ORDER BY 2 DESC;
+SELECT book_categories.name, COUNT(*) AS countofbookcategories
+FROM book_borrow
+         INNER JOIN books
+             ON book_borrow.book_id = books.id
+         INNER JOIN book_categories
+             ON books.book_category_id = book_categories.id
+GROUP BY book_categories.name
+ORDER BY 2 DESC; -- order by second column
 
 
 -- us 04 query to find most popular user
 
-SELECT full_name, COUNT(*) AS countofreadbooks
+SELECT u.full_name, COUNT(*) AS countofreadbooks
 FROM users u
          INNER JOIN book_borrow bb ON u.id = bb.user_id
 GROUP BY full_name
