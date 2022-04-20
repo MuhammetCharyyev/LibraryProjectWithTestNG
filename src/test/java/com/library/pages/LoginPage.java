@@ -22,8 +22,7 @@ public class LoginPage {
     @FindBy(tagName = "button")
     public WebElement loginButton;
 
-    @FindBy(id = "borrowed_books")
-    public WebElement borrowedBooksNumber;
+
 
     public void login(){
 
@@ -37,8 +36,6 @@ public class LoginPage {
         loginButton.click();
 
     }
-
-
 
 
 }
