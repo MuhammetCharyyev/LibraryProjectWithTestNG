@@ -18,9 +18,11 @@ public class US3 extends TestBase {
                         "ON books.book_category_id = book_categories.id\n" +
                         "GROUP BY book_categories.name\n" +
                         "ORDER BY 2 DESC";
+        //"ORDER BY countofbookcategories DESC";
 
         DB_Util.runQuery(query);
         String actualPopularCategory = DB_Util.getFirstRowFirstColumn();
+        // String actualPopularCategory = DB_Util.getCellValue(1, 1);
         System.out.println("actualPopularCategory = " + actualPopularCategory);
 
         //    Then verify "Classic" is the most popular book genre.

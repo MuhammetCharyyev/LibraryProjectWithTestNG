@@ -20,6 +20,7 @@ public class US1 extends TestBase {
         String query = "SELECT id\n" +
                        "FROM users";
         DB_Util.runQuery(query);
+        //actual data from DB
         actualIDs = DB_Util.getColumnDataAsList(1);
         //get column by index as List -> actual
         System.out.println("actualIDs from DB = " + actualIDs);
@@ -44,7 +45,7 @@ public class US1 extends TestBase {
 
         //from DB
         List<String> actualColumns = DB_Util.getAllColumnNamesAsList();
-        System.out.println("actualColumns from DB = " + actualColumns);
+            System.out.println("actualColumns from DB = " + actualColumns);
 
         //expected from user
         List<String> expectedColumns=new ArrayList<>(Arrays.asList(
